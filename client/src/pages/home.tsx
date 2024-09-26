@@ -16,12 +16,7 @@ const Home: React.FC = () => {
 
   const navigate = useNavigate();
 
-  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedOption = e.target.options[e.target.selectedIndex];
-    const selectedLabel = selectedOption.text;
-    setCategory(e.target.value);
-    setCategoryName(selectedLabel);
-  };
+
 
   const handleStartQuiz = () => {
     updateTriviaParams?.({ category, categoryName, difficulty });
@@ -34,13 +29,22 @@ const Home: React.FC = () => {
       <form>
         <label>
         <h3 className="text-center mb-4 text-primary">Choose category:</h3>
-          <select className="block mx-auto mb-10" value={category} onChange={(e) => setCategory(e.target.value)}>
-            {Categories.map((category) => (
-              <option key={category.id} value={category.id}>
-                {category.name}
-              </option>
-            ))}
-          </select>
+        <select
+  className="block mx-auto mb-10"
+  value={category}
+  onChange={(e) => {
+    const selectedOption = e.target.options[e.target.selectedIndex];
+    const selectedLabel = selectedOption.text;
+    setCategory(e.target.value);
+    setCategoryName(selectedLabel);
+  }}
+>
+  {Categories.map((category) => (
+    <option key={category.id} value={category.id}>
+      {category.name}
+    </option>
+  ))}
+</select>
         </label>
         
         <label>

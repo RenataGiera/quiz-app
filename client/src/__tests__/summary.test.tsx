@@ -1,8 +1,7 @@
 import "@testing-library/jest-dom";
-import { Summary } from "../pages/summary";
+import { Summary } from "../pages/Summary";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { TriviaContext, TriviaContextProps } from "../contexts/TriviaContext";
-import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const navigate = jest.fn();
@@ -71,6 +70,7 @@ describe("Summary", () => {
         type: "multiple",
         difficulty: "easy",
         category: "9",
+        categoryName: "test"
       },
       updateTriviaQuestions: jest.fn(),
       updateTriviaParams: jest.fn(),
@@ -117,6 +117,7 @@ describe("Summary", () => {
         type: "multiple",
         difficulty: "easy",
         category: "9",
+        categoryName: "test"
       },
       updateTriviaQuestions: jest.fn(),
       updateTriviaParams: jest.fn(),

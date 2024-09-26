@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from "../pages/home";
 import Quiz from "../pages/quiz";
-import { Summary } from "../pages/summary";
+import { Summary } from "../pages/Summary";
 import NotFound from "../pages/notfound";
 import MainLayout from "../layouts/main_layout";
 
